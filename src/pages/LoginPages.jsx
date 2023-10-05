@@ -17,22 +17,22 @@ const LoginPages = () => {
     }
 
   return (
-    <div>
-       <img src="/images/imagen.png" alt=""/>  
+    <div className="formuser_container2">
+       <img id="priI2" src="/images/imagen.png" alt=""/>  
        <article>
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit(submit)}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input {...register('email')} type="email" id="email" />
+        <form className="formuser2" onSubmit={handleSubmit(submit)}>
+        <h2 className="reg2" >Login</h2>
+          <div className="formuser_group2">
+            <label className="formuser_label2" htmlFor="email">Email</label>
+            <input className="formuser_input2" {...register('email')} type="email" id="email" />
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input {...register('password')} type="password" id="password" />
+          <div className="formuser_group2">
+            <label className="formuser_label2" htmlFor="password">Password</label>
+            <input className="formuser_input2" {...register('password')} type="password" id="password" />
           </div>
-          <button>Submit</button>
+          <button className="formuser_btn2" >Submit</button>
         </form>
-        <p>Do you have an account? <Link to='/auth/register'>Go to register</Link></p>
+        <p className="goR">Do you have an account? <Link to='/auth/register'> Go to register</Link></p>
        </article>
     </div>
   )

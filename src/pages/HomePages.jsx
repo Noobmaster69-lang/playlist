@@ -26,6 +26,8 @@ const HomePages = () => {
      setQuantityPerPage(e.target.value)
     }
 
+   
+
   return (
     <div>
       <div>

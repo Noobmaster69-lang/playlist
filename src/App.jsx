@@ -7,26 +7,31 @@ import { useEffect } from 'react'
 import { setCredentialsSlice } from './store/slices/credentials.slice'
 import { useDispatch } from 'react-redux'
 import ProtectedRoutes from './pages/ProtectedRoutes'
+import TrackPage from './pages/TrackPage'
+import ArtistPage from './pages/ArtistPage'
+import PlaylistPage from './pages/PlaylistPage'
 
 function App() {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    const token = localStorage.removeItem("token")
-    const username = localStorage.removeItem("username")
-    const email = localStorage.removeItem("email")
+    const token = localStorage.getItem("token")
+    const username = localStorage.getItem("username")
+    const email = localStorage.getItem("email")
     const obj = { token, username, email }
     dispatch(setCredentialsSlice(obj))
   }, [])
 
   return (
     <div>
-      <h1>Gift Music</h1>
       <Routes>
         <Route path='/auth/login' element={<LoginPages />} />
         <Route path='/auth/register' element={<RegisterPages />} />
-        <Route element={<ProtectedRoutes />} >
-        <Route path='/' element={<HomePages />} />
+        <Route element={<ProtectedRoutes />}>
+        <Route path='/' element={<HomePages />}/>
+        <Route path='/track/:id' element={<TrackPage />} />
+        <Route path='/artist/:id' element={<ArtistPage />} /> 
+        <Route path='/playlist' element={<PlaylistPage />} /> 
         </Route>
       </Routes>
     </div>

@@ -18,25 +18,26 @@ const RegisterPages = () => {
   }  
 
   return (
-    <div> 
-        <img src="/images/imagen2.png" alt="" />
+    <div className="formuser_container"> 
+        <img id="priI" src="/images/imagen2.png" alt="" />
         <article>
-        <form onSubmit={handleSubmit(submit)} >
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input {...register('email')} type="email" id="email" />
+        <form className="formuser" onSubmit={handleSubmit(submit)} >
+                    <h2 className="reg" >Register</h2>
+                    <div className="formuser_group">
+                        <label className="formuser_label" htmlFor="email">Email:</label>
+                        <input className="formuser_input" {...register('email')} type="email" id="email" />
                     </div>
-                    <div>
-                        <label htmlFor="name">name</label>
-                        <input {...register('name')} type="text" id="name" />
+                    <div className="formuser_group">
+                        <label className="formuser_label" htmlFor="name">Name:</label>
+                        <input className="formuser_input" {...register('name')} type="text" id="name" />
                     </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <input {...register('password')} type="password" id="password" />
+                    <div className="formuser_group">
+                        <label className="formuser_label" htmlFor="password">Password:</label>
+                        <input className="formuser_input" {...register('password')} type="password" id="password" />
                     </div>
-                    <button>Submit</button>
+                    <button className="formuser_btn">Create</button>
                 </form>
-                <p>Are you register? <Link to='/auth/login'>Go to login</Link></p>
+                <p className="goL">Are you register? <Link to='/auth/login'>Go to login</Link></p>
         </article>
     </div>
   )
